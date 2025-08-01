@@ -1130,3 +1130,19 @@
         align-items: center;
     }
 }
+
+
+
+.ek-mulaqat-img{
+    max-width: 600px;
+}
+
+@media (max-width : 767px) {
+
+    .ek-mulaqat-img{
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    
+}
