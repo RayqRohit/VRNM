@@ -456,7 +456,7 @@ nav {
     padding: 1rem 0;
 }
 
-.hero-title-image img{
+.hero-title-image img {
     mix-blend-mode: exclusion;
 }
 
@@ -771,15 +771,28 @@ nav {
 }
 
 /* Mobile Carousel Styles */
+/* Enhanced Smooth Carousel Transitions */
 #festivalGalleryCarousel {
     border-radius: 1.2rem;
     overflow: hidden;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
     background: #fff;
+    position: relative;
+}
+
+/* Smooth transition for carousel items */
+#festivalGalleryCarousel .carousel-inner {
+    border-radius: 1.2rem;
 }
 
 #festivalGalleryCarousel .carousel-item {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
+}
+
+/* Enhanced sliding animation */
+#festivalGalleryCarousel.sliding .carousel-item {
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 #festivalGalleryCarousel .carousel-item img {
@@ -787,32 +800,16 @@ nav {
     object-fit: cover;
     border-radius: 1.2rem;
     width: 100%;
+    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
-#festivalGalleryCarousel .carousel-caption {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 0.8rem 1.5rem;
-    bottom: 1.5rem;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: auto;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+/* Smooth hover effect for images */
+#festivalGalleryCarousel .carousel-item:hover img {
+    transform: scale(1.02);
 }
 
-#festivalGalleryCarousel .carousel-caption h5 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0;
-    color: #fff;
-    font-family: var(--font-prompt);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Enhanced Carousel Controls */
+/* Enhanced Controls with Better Positioning */
 #festivalGalleryCarousel .carousel-control-prev,
 #festivalGalleryCarousel .carousel-control-next {
     width: 50px;
@@ -838,13 +835,9 @@ nav {
 #festivalGalleryCarousel .carousel-control-prev:hover,
 #festivalGalleryCarousel .carousel-control-next:hover {
     opacity: 1;
-    background: rgba(229, 51, 75, 0.9);
+    background: rgba(229, 51, 75, 0.95);
     transform: translateY(-50%) scale(1.1);
-}
-
-#festivalGalleryCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
-#festivalGalleryCarousel .carousel-control-next:hover .carousel-control-next-icon {
-    filter: brightness(0) invert(1);
+    box-shadow: 0 8px 25px rgba(229, 51, 75, 0.3);
 }
 
 #festivalGalleryCarousel .carousel-control-prev-icon,
@@ -856,28 +849,93 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Carousel Indicators */
-#festivalGalleryCarousel .carousel-indicators {
-    bottom: -40px;
+#festivalGalleryCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#festivalGalleryCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Smooth Caption Animations */
+#festivalGalleryCarousel .carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    bottom: 2rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: auto;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#festivalGalleryCarousel .carousel-item.active .carousel-caption {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+#festivalGalleryCarousel .carousel-caption h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 0;
+    color: #fff;
+    font-family: var(--font-prompt);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced Indicators */
+#festivalGalleryCarousel .carousel-indicators {
+    bottom: -45px;
+    margin-bottom: 0;
+    gap: 8px;
+    justify-content: center;
 }
 
 #festivalGalleryCarousel .carousel-indicators [data-bs-target] {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: none;
-    margin: 0 6px;
-    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.7;
 }
 
 #festivalGalleryCarousel .carousel-indicators .active {
     background-color: #e5334b;
-    transform: scale(1.3);
-    box-shadow: 0 2px 8px rgba(229, 51, 75, 0.4);
+    border-color: #e5334b;
+    transform: scale(1.4);
+    box-shadow: 0 4px 12px rgba(229, 51, 75, 0.4);
+    opacity: 1;
 }
 
+/* Loading State Animation */
+#festivalGalleryCarousel.sliding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #e5334b, transparent);
+    animation: loading 0.8s ease-in-out;
+    z-index: 15;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
 
 /* Animation for grid items */
 @keyframes fadeInUp {
@@ -1429,4 +1487,67 @@ nav {
 }
 
 
-/* scroll section  */
+/* scroll bar section  */
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #f8f9fa;
+    border-radius: 10px;
+    /* box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #fdbf0a 0%, #e6a809 100%);
+    border-radius: 10px;
+    border: 2px solid #f8f9fa;
+    /* box-shadow: 0 2px 6px rgba(253, 191, 10, 0.3); */
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #e6a809 0%, #cc9507 100%);
+    /* box-shadow: 0 4px 12px rgba(253, 191, 10, 0.5); */
+    transform: scale(1.05);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, #cc9507 0%, #b8850a 100%);
+    /* box-shadow: 0 2px 8px rgba(253, 191, 10, 0.6); */
+}
+
+::-webkit-scrollbar-corner {
+    background: #f8f9fa;
+}
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #fdbf0a #f8f9fa;
+}
+
+/* Enhanced scrollbar for specific containers */
+.festival-gallery-wrapper,
+.president-message-wrapper,
+.about-university-section {
+    scrollbar-width: thin;
+    scrollbar-color: #fdbf0a #f8f9fa;
+}
+
+.festival-gallery-wrapper::-webkit-scrollbar,
+.president-message-wrapper::-webkit-scrollbar,
+.about-university-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.festival-gallery-wrapper::-webkit-scrollbar-thumb,
+.president-message-wrapper::-webkit-scrollbar-thumb,
+.about-university-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #fdbf0a 0%, #e6a809 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
