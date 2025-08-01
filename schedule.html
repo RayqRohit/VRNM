@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Vadodara Rashtriya Natya Mahotsav</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/custom/css/styles.css" />
+  <link rel="stylesheet" href="./assets/custom/css/media.css" />
+  <link rel="stylesheet" href="./assets/custom/css/schedule/schedule.css" />
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-2 navbar-dark" data-aos="fade-down" data-aos-delay="100">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/index.html">
+        <img class="nav-logo" src="./assets/images/main-logo.svg" alt="Parul University Logo" width="300" height="70"
+          style="object-fit: contain;" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse py-2" id="mainNavbar">
+        <ul
+          class="navbar-nav gap-3 gap-lg-2 w-100 justify-content-center justify-content-lg-end text-center text-lg-end text-uppercase">
+          <li class="nav-item"><a class="nav-link " href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/PIPA.html">About PIPA</a></li>
+          <li class="nav-item"><a class="nav-link" href="/aboutFestival.html">About Festival</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="/aboutPlays.html">About the Plays</a></li>
+          <li class="nav-item"><a class="nav-link" href="/queries.html">Queries</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="schedule-hero position-relative d-flex align-items-center" data-aos="fade-down" data-aos-delay="150">
+    <img src="./assets/images/banner-img/schedule banner.png" alt="Schedule Banner"
+      class="schedule-hero-bg position-absolute w-100 h-100 object-fit-cover" />
+    <div class="container position-relative z-2 text-white py-5">
+      <div class="row justify-content-center pt-5">
+        <div class="col-lg-10 text-center">
+          <h1 class="display-5 fw-bold mb-4 text-shadow schedule-hero-heading" data-aos="zoom-in" data-aos-delay="250">
+            Schedule</h1>
+          <div
+            class="d-inline-flex align-items-center bg-white bg-opacity-75 shadow rounded-3 px-4 py-2 mb-2 flex-wrap gap-2 schedule-info-box"
+            data-aos="fade-up" data-aos-delay="300">
+            <span class="me-3 d-flex align-items-center">
+              <i class="bi bi-calendar-event fs-5 text-warning me-2"></i>
+              <span class="text-dark fw-medium">19 – 22 August 2025</span>
+            </span>
+            <span class="vr d-none d-md-block"></span>
+            <span class="d-flex align-items-center">
+              <i class="bi bi-geo-alt fs-5 text-danger me-2"></i>
+              <span class="text-dark fw-medium">Parul University, Vadodara</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section class="schedule-section py-5" id="schedule" data-aos="fade-up" data-aos-delay="350">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <h2 class="schedule-heading text-center mb-5" data-aos="fade-up" data-aos-delay="400"><span
+              class="title-stroke">PLAY'S</span> SCHEDULE</h2>
+
+          <!-- Schedule Cards for Mobile -->
+          <div class="d-block d-lg-none" data-aos="fade-up" data-aos-delay="450">
+            <div class="schedule-cards">
+              <!-- Day 1 Card -->
+              <div class="schedule-card mb-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-header">
+                  <div class="day-badge">Day 1</div>
+                  <div class="date-info">19th August, 2025</div>
+                </div>
+                <div class="card-body">
+                  <div class="show-item">
+                    <div class="time-badge">11:00 AM</div>
+                    <div class="play-name">"Ek Mulaqat"</div>
+                  </div>
+                  <div class="show-item">
+                    <div class="time-badge">4:00 PM</div>
+                    <div class="play-name">"Gunah"</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 2 Card -->
+              <div class="schedule-card mb-4" data-aos="fade-up" data-aos-delay="550">
+                <div class="card-header">
+                  <div class="day-badge">Day 2</div>
+                  <div class="date-info">20th August, 2025</div>
+                </div>
+                <div class="card-body">
+                  <div class="show-item">
+                    <div class="time-badge">11:00 AM</div>
+                    <div class="play-name">"Tax Free Entertainment"</div>
+                  </div>
+                  <div class="show-item">
+                    <div class="time-badge">4:00 PM</div>
+                    <div class="play-name">"Massage"</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 3 Card -->
+              <div class="schedule-card mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="card-header">
+                  <div class="day-badge">Day 3</div>
+                  <div class="date-info">21st August, 2025</div>
+                </div>
+                <div class="card-body">
+                  <div class="show-item">
+                    <div class="time-badge">11:00 AM</div>
+                    <div class="play-name">"Bomma Cheppina Katha
+                      "</div>
+                  </div>
+                  <div class="show-item">
+                    <div class="time-badge">4:00 PM</div>
+                    <div class="play-name">"Jeena Isi Ka Naam Hai"</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 4 Card -->
+              <div class="schedule-card mb-4" data-aos="fade-up" data-aos-delay="650">
+                <div class="card-header">
+                  <div class="day-badge">Day 4</div>
+                  <div class="date-info">22nd August, 2025</div>
+                </div>
+                <div class="card-body">
+                  <div class="show-item">
+                    <div class="time-badge">11:00 AM</div>
+                    <div class="play-name">"Chanakya"</div>
+                  </div>
+                  <div class="show-item">
+                    <div class="time-badge">4:00 PM</div>
+                    <div class="play-name">"Babuji Theek Kehte Theater"</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhanced Table for Desktop -->
+          <div class="d-none d-lg-block" data-aos="fade-up" data-aos-delay="700">
+            <div class="table-container">
+              <table class="table schedule-table-elegant" data-aos="fade-up" data-aos-delay="750">
+                <thead>
+                  <tr>
+                    <th class="day-column"><i class="bi bi-calendar-week me-2"></i>Day</th>
+                    <th class="date-column"><i class="bi bi-calendar-date me-2"></i>Date</th>
+                    <th class="time-column"><i class="bi bi-clock me-2"></i>Time</th>
+                    <th class="play-column"><i class="bi bi-masks-theater me-2"></i>Name of the Play</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Day 1 -->
+                  <tr data-aos="fade-up" data-aos-delay="800">
+                    <td class="day-cell" rowspan="2">
+                      <div class="day-wrapper"><span class="day-number">Day 1</span></div>
+                    </td>
+                    <td class="date-cell" rowspan="2">
+                      <div class="date-wrapper"><span class="date-number">19</span><span class="date-month">Aug
+                          2025</span></div>
+                    </td>
+                    <td class="time-cell"><span class="time-badge-table">11:00 AM</span></td>
+                    <td class="play-cell"><span class="play-title">"Ek Mulaqat"</span></td>
+                  </tr>
+                  <tr data-aos="fade-up" data-aos-delay="850">
+                    <td class="time-cell"><span class="time-badge-table">4:00 PM</span></td>
+                    <td class="play-cell"><span class="play-title">"Gunah"</span></td>
+                  </tr>
+
+                  <!-- Day 2 -->
+                  <tr data-aos="fade-up" data-aos-delay="900">
+                    <td class="day-cell" rowspan="2">
+                      <div class="day-wrapper"><span class="day-number">Day 2</span></div>
+                    </td>
+                    <td class="date-cell" rowspan="2">
+                      <div class="date-wrapper"><span class="date-number">20</span><span class="date-month">Aug
+                          2025</span></div>
+                    </td>
+                    <td class="time-cell"><span class="time-badge-table">11:00 AM</span></td>
+                    <td class="play-cell"><span class="play-title">"Tax Free Entertainment"</span></td>
+                  </tr>
+                  <tr data-aos="fade-up" data-aos-delay="950">
+                    <td class="time-cell"><span class="time-badge-table">4:00 PM</span></td>
+                    <td class="play-cell"><span class="play-title">"Massage"</span></td>
+                  </tr>
+
+                  <!-- Day 3 -->
+                  <tr data-aos="fade-up" data-aos-delay="1000">
+                    <td class="day-cell" rowspan="2">
+                      <div class="day-wrapper"><span class="day-number">Day 3</span></div>
+                    </td>
+                    <td class="date-cell" rowspan="2">
+                      <div class="date-wrapper"><span class="date-number">21</span><span class="date-month">Aug
+                          2025</span></div>
+                    </td>
+                    <td class="time-cell"><span class="time-badge-table">11:00 AM</span></td>
+                    <td class="play-cell"><span class="play-title">"Bomma Cheppina Katha
+                        "</span></td>
+                  </tr>
+                  <tr data-aos="fade-up" data-aos-delay="1050">
+                    <td class="time-cell"><span class="time-badge-table">4:00 PM</span></td>
+                    <td class="play-cell"><span class="play-title">"Jeena Isi Ka Naam Hai"</span></td>
+                  </tr>
+
+                  <!-- Day 4 -->
+                  <tr data-aos="fade-up" data-aos-delay="1100">
+                    <td class="day-cell" rowspan="2">
+                      <div class="day-wrapper"><span class="day-number">Day 4</span></div>
+                    </td>
+                    <td class="date-cell" rowspan="2">
+                      <div class="date-wrapper"><span class="date-number">22</span><span class="date-month">Aug
+                          2025</span></div>
+                    </td>
+                    <td class="time-cell"><span class="time-badge-table">11:00 AM</span></td>
+                    <td class="play-cell"><span class="play-title">"Chanakya"</span></td>
+                  </tr>
+                  <tr data-aos="fade-up" data-aos-delay="1150">
+                    <td class="time-cell"><span class="time-badge-table">4:00 PM</span></td>
+                    <td class="play-cell"><span class="play-title">"Babuji Theek Kehte The"</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section pt-5 pb-3 text-white" data-aos="fade-down">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <!-- Left: Logo & Social -->
+        <div class="col-12 col-lg-4 col-md-12 text-center text-md-start mb-3 mb-md-0" data-aos="fade-right"
+          data-aos-delay="200">
+          <a href="#" class="d-inline-block mb-2">
+            <img src="./assets/images/parul-logo.png" alt="Parul University" width="250" height="100"
+              style="object-fit:contain;" />
+          </a>
+        </div>
+        <!-- Center: Festival Name & Links -->
+        <div class="col-12 col-lg-4 col-md-12 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="300">
+          <div class="footer-title fw-bold mb-2">Vadodara Rashtriya Natya Mahotsav</div>
+        </div>
+        <!-- Right: Contact Info -->
+        <div class="col-12 col-lg-4 col-md-12 text-center text-md-end" data-aos="fade-left" data-aos-delay="400">
+          <div class="footer-contact text-lg-end">
+            <div class="small">Organized by Parul University</div>
+            <div class="small">Waghodia Road, Vadodara, Gujarat</div>
+            <div class="small"><a href="mailto:vrnm@paruluniversity.ac.in"
+                class="footer-link">vrnm@paruluniversity.ac.in</a></div>
+            <div class="small"><a href="tel:+918758778882" class="footer-link">+91 87587 78882</a></div>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider my-4" />
+      <div class="row">
+        <div class="col text-center">
+          <div class="footer-copy small">&copy; 2025 Vadodara Rashtriya Natya Mahotsav · Parul University. All rights
+            reserved.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top" data-aos="fade-left" data-aos-delay="250">
+    <img src="./assets/images/chevron-up.svg" alt="" />
+  </button>
+
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./assets/custom/script/script.js"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 1000,
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 50) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      });
+      scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

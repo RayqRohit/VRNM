@@ -1,0 +1,677 @@
+/* schedule table section */
+
+.schedule-section {
+  background: #fff;
+}
+
+.schedule-hero-heading {
+  font-family: var(--font-montserrat-bold);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.schedule-heading {
+  /* font-family: var(--font-montserrat-bold); */
+  font-family: var(--font-nunito-bold);
+
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #042a4b;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.schedule-table th {
+  background: #ffe066;
+  color: #232536;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.7px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 2px solid #ffe066;
+}
+
+.schedule-table td {
+  background: #f7f6ef;
+  color: #232536;
+  font-size: 1.01rem;
+  border-top: 1px solid #ece7ce;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.schedule-table tr:nth-child(even) td {
+  background: #fffbe8;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 0.9em 0.7em;
+}
+
+@media (max-width: 600px) {
+  .schedule-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    font-size: 0.93rem;
+    padding: 0.6em 0.4em;
+  }
+
+  .table-responsive {
+    font-size: 0.98rem;
+  }
+}
+
+
+
+
+
+/* schedule hero section */
+
+.schedule-hero {
+  min-height: 54vh;
+  height: 54vh;
+  background: #1c1e2a;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+.schedule-hero-bg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.58) blur(1px);
+  z-index: 1;
+  pointer-events: none;
+  /* padding-top: 80px; */
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(28, 30, 42, 0.6) 0%, rgba(38, 41, 62, 0.5) 100%);
+  z-index: 1;
+}
+
+.schedule-hero .container {
+  z-index: 2;
+  position: relative;
+}
+
+.text-shadow {
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+.schedule-info-box {
+  font-size: 1.08rem;
+  backdrop-filter: blur(6px);
+}
+
+
+@media (max-width: 991.98px) {
+  .schedule-hero {
+    min-height: 35vh;
+    height: 55vh;
+    padding: 2.5rem 0 1.8rem 0;
+    padding-top: 80px;
+  }
+
+  .schedule-hero .display-4 {
+    font-size: 2rem;
+  }
+
+  .schedule-info-box {
+    font-size: 0.97rem;
+    padding: 0.65rem 1.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .schedule-hero {
+    min-height: 27vh;
+    height: 55vh;
+    padding: 1.2rem 0 1.2rem 0;
+    padding-top: 70px;
+  }
+
+  .schedule-hero .display-4 {
+    font-size: 1.36rem;
+  }
+}
+
+
+@media (max-width : 400px) {
+  .nav-logo {
+    width: 220px;
+    padding-block: 5px;
+  }
+}
+
+
+/* new things */
+/* Enhanced Schedule Section with Glassmorphism */
+:root {
+  --main-bg: #f5f7fb;
+  --primary: #253047;
+  --secondary: #4f8cff;
+  --muted: #f9fafb;
+  --highlight: #ffd066;
+  --border: #e3e7ef;
+  --green: #23b26d;
+  --play-color: #e5334b;
+}
+
+/* Section background */
+.schedule-section {
+  background: url('../../../images/pu-bg-img.jpg') center/cover no-repeat;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+/* Glassmorphism overlay */
+.schedule-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 42, 75, 0.7);
+  /* change this color & opacity as needed */
+  z-index: 0;
+}
+
+.schedule-section>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced heading with glassmorphism */
+.schedule-heading {
+  font-family: var(--font-prompt);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.schedule-heading::after {
+  content: '';
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--play-color));
+  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+  text-stroke: 1px rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  /* filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); */
+}
+
+/* Glassmorphism Table Container */
+.table-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border-radius: 20px; */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.table-container:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  /* transform: translateY(-2px); */
+}
+
+/* Table styling */
+.schedule-table-elegant {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Glassmorphism Table Headers */
+.schedule-table-elegant thead th {
+  background: #365f7e !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 24px 16px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: var(--font-prompt);
+  position: relative;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.schedule-table-elegant thead th::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: var(--play-color);
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(229, 51, 75, 0.4);
+}
+
+/* Glassmorphism Table Cells */
+.schedule-table-elegant tbody td {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 16px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 600;
+  font-family: var(--font-prompt);
+  transition: all 0.3s ease;
+}
+
+.schedule-table-elegant tbody tr {
+  transition: all 0.3s ease;
+}
+
+.schedule-table-elegant tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Enhanced hover effect */
+.schedule-table-elegant tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(79, 140, 255, 0.2);
+}
+
+/* Glassmorphism Day and Date cells */
+.day-cell,
+.date-cell {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 800;
+}
+
+.day-wrapper,
+.date-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.day-number {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.date-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffd249;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.date-month {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Glassmorphism Time badge */
+.time-badge-table {
+  display: inline-block;
+  background: rgba(79, 140, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px 20px;
+  box-shadow:
+    0 4px 15px rgba(79, 140, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.time-badge-table:hover {
+  transform: translateY(-2px);
+  background: rgba(79, 140, 255, 0.4);
+  box-shadow:
+    0 6px 20px rgba(79, 140, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Glassmorphism Play title */
+.play-title {
+  font-weight: 800;
+  color: #ffd249;
+  font-size: 1.4rem;
+  font-family: var(--font-prompt);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.play-title:hover {
+  color: #fff;
+  transform: scale(1.05);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Glassmorphism Mobile cards */
+.schedule-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.schedule-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  font-family: var(--font-prompt);
+  overflow: hidden;
+}
+
+.schedule-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Glassmorphism Card Headers */
+.schedule-card .card-header {
+  background: rgba(54, 95, 126, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Enhanced Day Badge with Glassmorphism */
+.day-badge {
+  background: rgba(79, 140, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 4px 15px rgba(79, 140, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.date-info {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Glassmorphism Card Body */
+.schedule-card .card-body {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.show-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+/* Enhanced Time Badge with Glassmorphism */
+.time-badge {
+  background: rgba(79, 140, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-width: 90px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 4px 15px rgba(79, 140, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.play-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #ffd249;
+  text-align: right;
+  margin-left: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .schedule-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .schedule-heading {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .schedule-card .card-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .show-item {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .play-name {
+    text-align: center;
+    margin-left: 0;
+    font-size: 1.5rem;
+    color: #ffd249;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .time-badge {
+    min-width: auto;
+    margin-bottom: 15px;
+  }
+
+  /* Enhanced mobile glassmorphism */
+  .schedule-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
+  /* Mobile scroll fixes */
+  .table-container {
+    transform: none !important;
+  }
+
+  .schedule-card {
+    transform: none !important;
+  }
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.schedule-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.schedule-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.schedule-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.schedule-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.schedule-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.schedule-table-elegant tbody tr {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.schedule-table-elegant tbody tr:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.schedule-table-elegant tbody tr:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.schedule-table-elegant tbody tr:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.schedule-table-elegant tbody tr:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(20px)) {
+
+  .schedule-card,
+  .table-container {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .schedule-card .card-header {
+    background: rgba(54, 95, 126, 0.5);
+  }
+
+  .schedule-table-elegant thead th {
+    background: rgba(255, 210, 73, 0.4) !important;
+  }
+
+  .schedule-table-elegant tbody td {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+}
