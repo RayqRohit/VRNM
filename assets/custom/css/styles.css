@@ -1181,7 +1181,7 @@ nav {
 
     .message-text {
         font-size: 1rem;
-        text-align: left;
+        text-align: justify;
     }
 }
 
