@@ -472,7 +472,7 @@ nav {
 
 /* Hover effect for the image */
 .hero-image:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.4));
 }
 
