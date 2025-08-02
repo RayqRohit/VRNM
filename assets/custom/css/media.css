@@ -533,7 +533,7 @@ body.navbar-open {
   }
 
   .festival-gallery-wrapper {
-    padding: 1rem;
+    padding: 0;
     margin: 0 -15px;
     border-radius: 0;
   }

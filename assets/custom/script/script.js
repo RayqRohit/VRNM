@@ -68,10 +68,112 @@
     }
 })();
 
+// loading screen script
+document.addEventListener('DOMContentLoaded', function () {
+    const fullLoadingScreen = document.getElementById('loadingScreen');
+    const simpleLoadingScreen = document.getElementById('simpleLoadingScreen');
+    const loadingScreen = fullLoadingScreen || simpleLoadingScreen;
+
+    if (!loadingScreen) return; // Exit if no loading screen found
+
+    let assetsLoaded = false;
+    let minimumTimeElapsed = false;
+
+
+    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');
+
+
+    const loadingTime = fullLoadingScreen ? 1600 : 800;
+
+    setTimeout(() => {
+        minimumTimeElapsed = true;
+        if (assetsLoaded) {
+            hideLoadingScreen();
+        }
+    }, loadingTime);
+
+
+    function checkAssetsLoaded() {
+        const images = document.querySelectorAll('img');
+        let loadedImages = 0;
+
+        if (images.length === 0) {
+            assetsLoaded = true;
+            if (minimumTimeElapsed) {
+                hideLoadingScreen();
+            }
+            return;
+        }
+
+        images.forEach(img => {
+            if (img.complete) {
+                loadedImages++;
+            } else {
+                img.addEventListener('load', () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        assetsLoaded = true;
+                        if (minimumTimeElapsed) {
+                            hideLoadingScreen();
+                        }
+                    }
+                });
+
+                img.addEventListener('error', () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        assetsLoaded = true;
+                        if (minimumTimeElapsed) {
+                            hideLoadingScreen();
+                        }
+                    }
+                });
+            }
+        });
+
+        if (loadedImages === images.length) {
+            assetsLoaded = true;
+            if (minimumTimeElapsed) {
+                hideLoadingScreen();
+            }
+        }
+    }
+
+
+    function hideLoadingScreen() {
+        loadingScreen.classList.add('fade-out');
+
+        // Restore scrolling
+        setTimeout(() => {
+            document.body.classList.remove('no-scroll');
+            document.documentElement.classList.remove('no-scroll');
+        }, 300);
+
+
+        setTimeout(() => {
+            if (loadingScreen.parentNode) {
+                loadingScreen.parentNode.removeChild(loadingScreen);
+            }
+        }, 600);
+    }
+
+
+    checkAssetsLoaded();
+
+    // Fallback timeout
+    const maxTimeout = fullLoadingScreen ? 8000 : 4000;
+    setTimeout(() => {
+        if (loadingScreen.parentNode) {
+            hideLoadingScreen();
+        }
+    }, maxTimeout);
+});
+
 // Initialize GLightbox variable
 let lightbox;
 
-// Main DOMContentLoaded event handler
+
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize AOS
     if (typeof AOS !== 'undefined') {
@@ -276,12 +378,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Close menu when clicking on nav links (for better UX)
+    // ✨ ENHANCEMENT ADDED HERE - Smooth navigation with proper navbar collapse
     const navLinks = navbar.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (window.innerWidth <= 991.98) {
-                navbarToggler.click();
+        link.addEventListener('click', function (event) {
+            const isExpanded = navbar.classList.contains('show');
+            const isMobile = window.getComputedStyle(navbarToggler).display !== 'none';
+
+            if (isExpanded && isMobile) {
+                event.preventDefault();
+                const targetUrl = this.getAttribute('href');
+
+                // Add visual feedback
+                this.style.opacity = '0.6';
+                this.style.pointerEvents = 'none';
+
+                // Close navbar first
+                const bsCollapse = new bootstrap.Collapse(navbar);
+                bsCollapse.hide();
+
+                // Navigate after collapse completes
+                navbar.addEventListener('hidden.bs.collapse', function onHidden() {
+                    // Remove event listener to prevent multiple triggers
+                    navbar.removeEventListener('hidden.bs.collapse', onHidden);
+
+                    if (targetUrl && targetUrl !== '#') {
+                        // Brief loading state before navigation
+                        document.body.style.transition = 'opacity 0.2s ease';
+                        document.body.style.opacity = '0.9';
+
+                        setTimeout(() => {
+                            window.location.href = targetUrl;
+                        }, 100);
+                    }
+                });
             }
         });
     });
